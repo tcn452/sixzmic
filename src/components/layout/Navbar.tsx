@@ -9,6 +9,7 @@ import {
   X,
   UploadCloud,
   ChevronRight,
+  Sparkles,
 } from "lucide-react";
 
 interface NavbarProps {
@@ -29,14 +30,14 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#070709]/95 backdrop-blur-xl">
-      <div className="mx-auto flex h-18 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        {/* Brand / Logo */}
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-[#070709]/95 backdrop-blur-2xl transition-all">
+      <div className="mx-auto flex h-22 sm:h-24 max-w-[1440px] items-center justify-between px-6 sm:px-8 lg:px-12">
+        {/* Brand / Logo (Bold, Prominent & Legible) */}
         <Link
           href="/"
-          className="group flex items-center gap-3 transition-opacity hover:opacity-95 shrink-0"
+          className="group flex items-center gap-3.5 transition-transform hover:scale-[1.02] shrink-0"
         >
-          <div className="relative h-8 w-8 overflow-hidden rounded-lg border border-white/15 bg-white/5 p-1 transition-transform group-hover:scale-105">
+          <div className="relative h-10 w-10 sm:h-11 sm:w-11 overflow-hidden rounded-xl border border-white/15 bg-white/5 p-1.5 transition-colors group-hover:border-sixzmic-lime/50 shadow-md">
             <Image
               src="/logo/sixzmic-submark.png"
               alt="Sixzmic Icon"
@@ -45,7 +46,7 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
               priority
             />
           </div>
-          <div className="relative h-6 w-28">
+          <div className="relative h-8 w-36 sm:h-9 sm:w-44">
             <Image
               src="/logo/sixzmic-logo.png"
               alt="Sixzmic"
@@ -56,18 +57,18 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
           </div>
         </Link>
 
-        {/* Clean, Spacious Desktop Navigation with Real Links */}
-        <nav className="hidden lg:flex items-center gap-8">
+        {/* Spacious, Elegant Desktop Navigation */}
+        <nav className="hidden xl:flex items-center gap-10">
           {navItems.map((item) => {
             const isActive = pathname === item.href;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-1 text-sm font-medium tracking-wide transition-colors ${
+                className={`relative py-2 text-[15px] font-semibold tracking-wide transition-all ${
                   isActive
-                    ? "text-sixzmic-lime font-semibold"
-                    : "text-white/70 hover:text-white"
+                    ? "text-sixzmic-lime"
+                    : "text-white/75 hover:text-white"
                 }`}
               >
                 <span>{item.label}</span>
@@ -80,62 +81,62 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
         </nav>
 
         {/* Desktop Actions */}
-        <div className="hidden sm:flex items-center gap-3 shrink-0">
+        <div className="hidden sm:flex items-center gap-4 shrink-0">
           {openSubmitModal && (
             <button
               onClick={openSubmitModal}
-              className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold text-white transition-all hover:border-sixzmic-lime/50 hover:bg-white/10"
+              className="flex items-center gap-2 rounded-xl border border-white/15 bg-white/5 px-5 py-2.5 text-xs sm:text-sm font-semibold text-white transition-all hover:border-sixzmic-lime/50 hover:bg-white/10"
             >
-              <UploadCloud className="h-3.5 w-3.5 text-sixzmic-lime" />
+              <UploadCloud className="h-4 w-4 text-sixzmic-lime" />
               <span>Submit IP</span>
             </button>
           )}
 
           <Link
             href="/comics#membership-tiers"
-            className="flex items-center gap-1.5 rounded-xl bg-sixzmic-lime px-4 py-2 text-xs font-bold text-black transition-all hover:bg-sixzmic-limeHover shadow-md shadow-sixzmic-lime/20"
+            className="flex items-center gap-1.5 rounded-xl bg-sixzmic-lime px-5 py-2.5 text-xs sm:text-sm font-bold text-black transition-all hover:bg-sixzmic-limeHover shadow-lg shadow-sixzmic-lime/20 hover:scale-[1.02]"
           >
             <span>Fan Pass</span>
-            <ChevronRight className="h-3.5 w-3.5" />
+            <ChevronRight className="h-4 w-4" />
           </Link>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex lg:hidden items-center gap-2">
+        <div className="flex xl:hidden items-center gap-3">
           {openSubmitModal && (
             <button
               onClick={openSubmitModal}
-              className="sm:hidden rounded-lg border border-white/15 bg-white/5 p-2 text-sixzmic-lime"
+              className="sm:hidden rounded-xl border border-white/15 bg-white/5 p-2.5 text-sixzmic-lime"
               title="Submit IP"
             >
-              <UploadCloud className="h-4 w-4" />
+              <UploadCloud className="h-5 w-5" />
             </button>
           )}
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-lg border border-white/15 bg-white/5 p-2 text-white hover:bg-white/10"
+            className="rounded-xl border border-white/15 bg-white/5 p-2.5 text-white hover:bg-white/10"
             aria-label="Toggle navigation menu"
           >
-            {mobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
       </div>
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="border-t border-white/10 bg-[#070709]/95 px-5 py-6 backdrop-blur-2xl lg:hidden">
+        <div className="border-t border-white/10 bg-[#070709]/98 px-6 py-8 backdrop-blur-3xl xl:hidden">
           <div className="flex flex-col gap-2">
             <Link
               href="/"
               onClick={() => setMobileMenuOpen(false)}
-              className={`flex items-center justify-between rounded-xl p-3 text-left transition-colors ${
+              className={`flex items-center justify-between rounded-xl p-3.5 text-left transition-colors ${
                 pathname === "/"
                   ? "bg-sixzmic-lime text-black font-bold"
                   : "text-white/80 hover:bg-white/5"
               }`}
             >
-              <span className="text-sm">Home</span>
+              <span className="text-base font-semibold">Home</span>
               <ChevronRight className="h-4 w-4 opacity-50" />
             </Link>
 
@@ -146,39 +147,39 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
                   key={item.href}
                   href={item.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className={`flex items-center justify-between rounded-xl p-3 text-left transition-colors ${
+                  className={`flex items-center justify-between rounded-xl p-3.5 text-left transition-colors ${
                     isActive
                       ? "bg-sixzmic-lime text-black font-bold"
                       : "text-white/80 hover:bg-white/5"
                   }`}
                 >
-                  <span className="text-sm">{item.label}</span>
+                  <span className="text-base font-semibold">{item.label}</span>
                   <ChevronRight className="h-4 w-4 opacity-50" />
                 </Link>
               );
             })}
           </div>
 
-          <div className="mt-6 flex flex-col gap-2.5 pt-4 border-t border-white/10">
+          <div className="mt-8 flex flex-col gap-3 pt-6 border-t border-white/10">
             {openSubmitModal && (
               <button
                 onClick={() => {
                   setMobileMenuOpen(false);
                   openSubmitModal();
                 }}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 py-3 text-xs font-semibold text-white"
+                className="flex w-full items-center justify-center gap-2 rounded-xl border border-white/15 bg-white/5 py-3.5 text-sm font-semibold text-white"
               >
                 <UploadCloud className="h-4 w-4 text-sixzmic-lime" />
-                <span>Submit Original IP</span>
+                <span>Submit Original IP to Publishers</span>
               </button>
             )}
             <Link
               href="/comics#membership-tiers"
               onClick={() => setMobileMenuOpen(false)}
-              className="flex w-full items-center justify-center gap-1.5 rounded-xl bg-sixzmic-lime py-3 text-xs font-bold text-black"
+              className="flex w-full items-center justify-center gap-2 rounded-xl bg-sixzmic-lime py-3.5 text-sm font-bold text-black shadow-lg shadow-sixzmic-lime/20"
             >
               <span>Explore Fan Passes</span>
-              <ChevronRight className="h-3.5 w-3.5" />
+              <ChevronRight className="h-4 w-4" />
             </Link>
           </div>
         </div>
