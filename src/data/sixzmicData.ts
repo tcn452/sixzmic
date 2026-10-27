@@ -160,7 +160,7 @@ export const LATEST_DROPS: ComicDrop[] = [
     coverImage: "/covers/zipho-2.jpg",
     reads: "31.9K",
     rating: 4.85,
-    description: "Deciphering the neural imprint leads Zipho deeper into the sunken catacombs.",
+    description: "Deciphering the encrypted dossier leads Zipho deeper into the sunken catacombs.",
   },
   {
     id: "khanya-e2",
@@ -173,7 +173,7 @@ export const LATEST_DROPS: ComicDrop[] = [
     badge: "Featured",
     reads: "74.5K",
     rating: 4.95,
-    description: "Pursued by synthetic hounds, Khanya must learn to modulate his dormant radiance.",
+    description: "Pursued by syndicate trackers, Khanya must learn to modulate his dormant radiance.",
   },
   {
     id: "rrba-3",
@@ -259,7 +259,7 @@ export const LATEST_DROPS: ComicDrop[] = [
     coverImage: "/covers/david.png",
     reads: "22.6K",
     rating: 4.79,
-    description: "An architectural designer finds his digital blueprints coming to life with dangerous sentience.",
+    description: "An architectural designer finds his urban blueprints manipulated by a shadow syndicate.",
   },
   {
     id: "kabelo",
@@ -284,7 +284,7 @@ export const LATEST_DROPS: ComicDrop[] = [
     coverImage: "/covers/kiko.png",
     reads: "27.8K",
     rating: 4.84,
-    description: "A young robotic companion and a rogue pilot navigate uncharted stellar anomalies.",
+    description: "A brave young explorer and a rogue star pilot navigate uncharted stellar anomalies.",
   },
 ];
 
@@ -349,11 +349,11 @@ export const CHARACTERS_LIST: CharacterLore[] = [
   { name: "Khanya", series: "Khanya", role: "Solar Conduit & Protagonist", image: "/hero/khanya-e1.jpg", studio: "Krash Nation" },
   { name: "Rook", series: "RRBA", role: "Tactical Rogue Commander", image: "/hero/rrba.jpg", studio: "Studio Leviathan" },
   { name: "Flow Lee", series: "Flow Lee", role: "Rhythm Martial Artist", image: "/hero/nhlanhla-kumalo-flow-lee-concept-02.jpg", studio: "Kamo Vision" },
-  { name: "Zipho", series: "Zipho", role: "Neural Memory Bearer", image: "/covers/zipho-1.jpg", studio: "Dream Shards" },
+  { name: "Zipho", series: "Zipho", role: "Bearer of Forgotten Truths", image: "/covers/zipho-1.jpg", studio: "Dream Shards" },
   { name: "Kabelo", series: "Kabelo", role: "Kinetic Beat Catalyst", image: "/covers/kabelo.png", studio: "Krash Nation" },
-  { name: "David", series: "David", role: "Digital Architect Outlaw", image: "/covers/david.png", studio: "Converge" },
-  { name: "Kiko", series: "Kiko", role: "Sentient Scout Automaton", image: "/covers/kiko.png", studio: "Studio N2K" },
-  { name: "Switch", series: "Switch", role: "Neuro-Net Infiltrator", image: "/covers/switch.jpg", studio: "Studio Leviathan" },
+  { name: "David", series: "David", role: "Visionary Rebel Architect", image: "/covers/david.png", studio: "Converge" },
+  { name: "Kiko", series: "Kiko", role: "Scout Navigator & Pilot Companion", image: "/covers/kiko.png", studio: "Studio N2K" },
+  { name: "Switch", series: "Switch", role: "Master Cyber Infiltrator", image: "/covers/switch.jpg", studio: "Studio Leviathan" },
 ];
 
 export const PODCAST_EPISODES: PodcastEpisode[] = [
