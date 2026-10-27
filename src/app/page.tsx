@@ -5,33 +5,21 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import { HeroSection } from "@/components/home/HeroSection";
 import { DropsSection } from "@/components/home/DropsSection";
+import { VideoShowcase } from "@/components/home/VideoShowcase";
 import { StudiosSection } from "@/components/home/StudiosSection";
 import { CharactersSection } from "@/components/home/CharactersSection";
-import { PodcastsSection } from "@/components/home/PodcastsSection";
 import { MembershipSection } from "@/components/home/MembershipSection";
-import { InstitutionsSection } from "@/components/home/InstitutionsSection";
 import { SubmitModal } from "@/components/modals/SubmitModal";
 import { ReaderModal } from "@/components/modals/ReaderModal";
 import { CheckoutModal } from "@/components/modals/CheckoutModal";
 import { ComicDrop, LATEST_DROPS } from "@/data/sixzmicData";
+import { useRouter } from "next/navigation";
 
 export default function HomePage() {
-  const [activeTab, setActiveTab] = useState<string>("read");
+  const router = useRouter();
   const [selectedComic, setSelectedComic] = useState<ComicDrop | null>(null);
   const [isSubmitOpen, setIsSubmitOpen] = useState(false);
   const [selectedTier, setSelectedTier] = useState<string | null>(null);
-
-  const handleTabChange = (tabId: string) => {
-    setActiveTab(tabId);
-    if (tabId === "read") {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      const element = document.getElementById(tabId);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    }
-  };
 
   const handleHeroReadClick = (comicId: string) => {
     const found = LATEST_DROPS.find(
@@ -41,24 +29,23 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-sixzmic-bg text-sixzmic-white">
-      {/* Persistent Universal Navigation */}
-      <Navbar
-        activeTab={activeTab}
-        setActiveTab={handleTabChange}
-        openSubmitModal={() => setIsSubmitOpen(true)}
-      />
+    <div className="relative min-h-screen flex flex-col bg-[#070709] text-white">
+      {/* Persistent Navigation */}
+      <Navbar openSubmitModal={() => setIsSubmitOpen(true)} />
 
-      {/* Main Content Area */}
+      {/* Main Frontdoor Experience */}
       <main className="flex-1">
-        {/* Option C: Dual-Portal Hero Stage */}
+        {/* Full Uncropped Hero Stage */}
         <HeroSection
           onReadClick={handleHeroReadClick}
-          onExploreStudios={() => handleTabChange("studios")}
+          onExploreStudios={() => router.push("/studios")}
         />
 
         {/* Comic Drops & Series Catalog */}
         <DropsSection onSelectComic={(comic) => setSelectedComic(comic)} />
+
+        {/* YouTube Game Trailers & Animation Showcase */}
+        <VideoShowcase />
 
         {/* 6 Creative Studio Houses */}
         <StudiosSection openSubmitModal={() => setIsSubmitOpen(true)} />
@@ -66,21 +53,12 @@ export default function HomePage() {
         {/* Character Lore & Archives */}
         <CharactersSection />
 
-        {/* Membership Tiers (Working Passes R120 & R250) */}
+        {/* Membership Passes (R120 Fan Pass & R250 Collector) */}
         <MembershipSection onSelectTier={(tier) => setSelectedTier(tier)} />
-
-        {/* Podcast Network & Audio Player */}
-        <PodcastsSection />
-
-        {/* Institutional Publishing & Learn */}
-        <InstitutionsSection />
       </main>
 
-      {/* Universal Footer */}
-      <Footer
-        setActiveTab={handleTabChange}
-        openSubmitModal={() => setIsSubmitOpen(true)}
-      />
+      {/* Universal Multi-Page Footer */}
+      <Footer openSubmitModal={() => setIsSubmitOpen(true)} />
 
       {/* Modals */}
       <SubmitModal

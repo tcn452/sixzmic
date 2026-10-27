@@ -2,21 +2,21 @@
 
 import React from "react";
 import Image from "next/image";
-import { ShieldCheck, Mail, ArrowUpRight, Sparkles } from "lucide-react";
+import Link from "next/link";
+import { ShieldCheck, Mail, ArrowUpRight } from "lucide-react";
 
 interface FooterProps {
-  setActiveTab: (tab: string) => void;
-  openSubmitModal: () => void;
+  openSubmitModal?: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ setActiveTab, openSubmitModal }) => {
+export const Footer: React.FC<FooterProps> = ({ openSubmitModal }) => {
   return (
     <footer className="border-t border-white/10 bg-[#060608] pt-16 pb-12 text-sm text-sixzmic-muted">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 gap-12 lg:grid-cols-5">
           {/* Brand Column */}
           <div className="lg:col-span-2">
-            <div className="flex items-center gap-3">
+            <Link href="/" className="flex items-center gap-3">
               <div className="relative h-8 w-8 overflow-hidden rounded-lg border border-white/10 bg-white/5 p-1">
                 <Image
                   src="/logo/sixzmic-submark.png"
@@ -33,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openSubmitModal })
                   className="object-contain object-left"
                 />
               </div>
-            </div>
+            </Link>
 
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/60">
               Sixzmic is a global entertainment publisher that discovers, houses, protects, and
@@ -77,59 +77,34 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openSubmitModal })
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Universal Portals</h4>
             <ul className="mt-4 space-y-2.5 text-xs">
               <li>
-                <button
-                  onClick={() => {
-                    setActiveTab("read");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="hover:text-sixzmic-lime transition-colors text-left"
-                >
-                  Home Base (Comics & Drops)
-                </button>
+                <Link href="/comics" className="hover:text-sixzmic-lime transition-colors">
+                  Comics & Drop Catalog
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    setActiveTab("studios");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="hover:text-sixzmic-lime transition-colors text-left"
-                >
+                <Link href="/studios" className="hover:text-sixzmic-lime transition-colors">
                   Studios & Publishing Houses
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    setActiveTab("characters");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="hover:text-sixzmic-lime transition-colors text-left"
-                >
+                <Link href="/games" className="hover:text-sixzmic-lime transition-colors">
+                  Games & Animation Theater
+                </Link>
+              </li>
+              <li>
+                <Link href="/characters" className="hover:text-sixzmic-lime transition-colors">
                   Characters & Lore Dossiers
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    setActiveTab("podcasts");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="hover:text-sixzmic-lime transition-colors text-left"
-                >
+                <Link href="/podcasts" className="hover:text-sixzmic-lime transition-colors">
                   Sixzmic Podcast Network
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  onClick={() => {
-                    setActiveTab("institutions");
-                    window.scrollTo({ top: 0, behavior: "smooth" });
-                  }}
-                  className="hover:text-sixzmic-lime transition-colors text-left"
-                >
+                <Link href="/institutions" className="hover:text-sixzmic-lime transition-colors">
                   Institutional Plans & Learn
-                </button>
+                </Link>
               </li>
             </ul>
           </div>
@@ -139,28 +114,40 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openSubmitModal })
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Creative Studios</h4>
             <ul className="mt-4 space-y-2.5 text-xs">
               <li>
-                <span className="text-white/80">Studio N2K</span>
-                <span className="block text-[11px] text-white/40">Games · Animation</span>
+                <Link href="/studios#studio-n2k" className="hover:text-white transition-colors">
+                  <span className="text-white/80">Studio N2K</span>
+                  <span className="block text-[11px] text-white/40">Games · Animation</span>
+                </Link>
               </li>
               <li>
-                <span className="text-white/80">Krash Nation</span>
-                <span className="block text-[11px] text-white/40">Comics · Animation</span>
+                <Link href="/studios#krash-nation" className="hover:text-white transition-colors">
+                  <span className="text-white/80">Krash Nation</span>
+                  <span className="block text-[11px] text-white/40">Comics · Animation</span>
+                </Link>
               </li>
               <li>
-                <span className="text-white/80">Studio Leviathan</span>
-                <span className="block text-[11px] text-white/40">Sci-Fi & Graphic Novels</span>
+                <Link href="/studios#studio-leviathan" className="hover:text-white transition-colors">
+                  <span className="text-white/80">Studio Leviathan</span>
+                  <span className="block text-[11px] text-white/40">Sci-Fi & Graphic Novels</span>
+                </Link>
               </li>
               <li>
-                <span className="text-white/80">Dream Shards</span>
-                <span className="block text-[11px] text-white/40">Interactive Games</span>
+                <Link href="/studios#dream-shards" className="hover:text-white transition-colors">
+                  <span className="text-white/80">Dream Shards</span>
+                  <span className="block text-[11px] text-white/40">Interactive Games</span>
+                </Link>
               </li>
               <li>
-                <span className="text-white/80">Kamo Vision Comics</span>
-                <span className="block text-[11px] text-white/40">Indie Series & Visual Arts</span>
+                <Link href="/studios#kamo-vision" className="hover:text-white transition-colors">
+                  <span className="text-white/80">Kamo Vision Comics</span>
+                  <span className="block text-[11px] text-white/40">Indie Series & Visual Arts</span>
+                </Link>
               </li>
               <li>
-                <span className="text-white/80">Converge</span>
-                <span className="block text-[11px] text-white/40">Transmedia Design House</span>
+                <Link href="/studios#converge" className="hover:text-white transition-colors">
+                  <span className="text-white/80">Converge</span>
+                  <span className="block text-[11px] text-white/40">Transmedia Design House</span>
+                </Link>
               </li>
             </ul>
           </div>
@@ -169,15 +156,17 @@ export const Footer: React.FC<FooterProps> = ({ setActiveTab, openSubmitModal })
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-white">Publishing & Legal</h4>
             <ul className="mt-4 space-y-2.5 text-xs">
-              <li>
-                <button
-                  onClick={openSubmitModal}
-                  className="flex items-center gap-1 text-sixzmic-lime hover:underline"
-                >
-                  <span>Submit Original IP</span>
-                  <ArrowUpRight className="h-3 w-3" />
-                </button>
-              </li>
+              {openSubmitModal && (
+                <li>
+                  <button
+                    onClick={openSubmitModal}
+                    className="flex items-center gap-1 text-sixzmic-lime hover:underline"
+                  >
+                    <span>Submit Original IP</span>
+                    <ArrowUpRight className="h-3 w-3" />
+                  </button>
+                </li>
+              )}
               <li>
                 <span className="text-white/70">ISNI & IPI Party Registry</span>
               </li>

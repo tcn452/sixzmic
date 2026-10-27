@@ -39,6 +39,36 @@ export interface PodcastEpisode {
   description: string;
 }
 
+export interface VideoTrailer {
+  id: string;
+  title: string;
+  studio: string;
+  type: string;
+  youtubeId: string;
+  description: string;
+}
+
+export const GAME_VIDEOS: VideoTrailer[] = [
+  {
+    id: "psycho-stars",
+    title: "Psycho Stars: Combo Demo V1",
+    studio: "Studio N2K & Dream Shards",
+    type: "Gameplay Combat Demo",
+    youtubeId: "CFbVKMpJ8vQ",
+    description:
+      "Real-time kinetic combo strings, counter systems, and stylized combat mechanics from the upcoming competitive brawler.",
+  },
+  {
+    id: "the-traveller",
+    title: "The Traveller: 2D Game Trailer",
+    studio: "Studio N2K Animation",
+    type: "Official 2D Game Trailer",
+    youtubeId: "ohyAGFaGmYk",
+    description:
+      "A hand-crafted 2D atmospheric adventure navigating shattered realms, dimensional rifts, and forgotten celestial temples.",
+  },
+];
+
 export const HERO_FEATURED = [
   {
     id: "rank-1",
