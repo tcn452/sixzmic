@@ -481,21 +481,149 @@ export const MEMBERSHIP_TIERS = [
 
 export const INSTITUTIONAL_PLANS = [
   {
-    id: "campus",
-    name: "Campus & University",
-    audience: "Higher education creative & animation departments",
-    highlights: ["Unlimited student digital comic library access", "Studio pipeline case studies & masterclasses", "API access for creative tech students"],
+    id: "comics",
+    name: "Comics Plan",
+    tagline: "For illustration departments and institutions publishing sequential art.",
+    pricing: "Custom Institutional Pricing",
+    services: ["Sixzmic Comics (Publishing & Distribution)", "Student Creator Portfolios", "Campus Reading Access"],
+    coverage: {
+      comics: true,
+      gaming: false,
+      animation: false,
+      learn: false,
+    },
   },
   {
-    id: "library",
-    name: "Public Libraries",
-    audience: "Municipal & community library systems",
-    highlights: ["Concurrent reading licenses", "Curated graphic novel collections", "Youth reading initiatives & engagement metrics"],
+    id: "comics-games",
+    name: "Comics + Games",
+    tagline: "For institutions working across illustrated stories and playable interactive worlds.",
+    pricing: "Custom Institutional Pricing",
+    popular: true,
+    services: [
+      "Sixzmic Comics (Publishing & Distribution)",
+      "Sixzmic Gaming (Prototype Hosting & Playtests)",
+      "Cross-Media Student Slates",
+      "Campus Reading & Play Access",
+    ],
+    coverage: {
+      comics: true,
+      gaming: true,
+      animation: false,
+      learn: false,
+    },
   },
   {
-    id: "studio-partner",
-    name: "Studio Incubation",
-    audience: "Independent creator collectives & schools",
-    highlights: ["Sixzmic Learn curriculum integration", "Direct pipeline to publisher IP review", "Mentorship from N2K, Krash & Leviathan directors"],
+    id: "complete",
+    name: "Complete Plan",
+    tagline: "For institutions bringing their creative disciplines together under one publishing suite.",
+    pricing: "Custom Institutional Pricing",
+    services: [
+      "Sixzmic Comics (Publishing & Distribution)",
+      "Sixzmic Gaming (Prototype Hosting & Playtests)",
+      "Sixzmic Animation (Shorts & Pipeline Decks)",
+      "Sixzmic Learn (Industry-led masterclasses & studio mentorship)",
+    ],
+    coverage: {
+      comics: true,
+      gaming: true,
+      animation: true,
+      learn: true,
+    },
+  },
+];
+
+export const INSTITUTIONAL_FAQS = [
+  {
+    q: "What is Sixzmic Learn?",
+    a: "Sixzmic Learn connects schools and universities with studio directors through accredited modules and masterclasses. Students learn directly from practicing comic artists, animators, and game builders, bridging academic theory with studio production pipelines. Included with the Complete plan.",
+  },
+  {
+    q: "Can we monetize our institution's creative work?",
+    a: "Hosting, global digital distribution, and institutional monetization are core pillars of Sixzmic. Commercial terms and revenue share are tailored to your institution's governance policies during the consultation.",
+  },
+  {
+    q: "What happens when I submit an enquiry?",
+    a: "Submitting an enquiry does not charge you or start a recurring contract. Our educational partnerships team receives your institution's profile and contacts you via email to schedule a tailored presentation, review seat requirements, and establish custom pricing.",
+  },
+  {
+    q: "Which disciplines are supported?",
+    a: "Sequential art, 2D/3D comic illustration, concept design, narrative design, real-time animation, and playable game prototypes across PC, mobile, and web.",
+  },
+];
+
+export const LEGAL_IDENTIFIERS = [
+  {
+    code: "ISNI",
+    name: "International Standard Name Identifier",
+    role: "Public Identity Standard",
+    description: "Assigns unique 16-digit identifiers to creators, studios, writers, and publishers to disambiguate identity and protect global royalties.",
+    example: "0000 0005 1000 0001 (Sixzmic Org)",
+  },
+  {
+    code: "IPI",
+    name: "Interested Party Information",
+    role: "Rights Ownership Tracking",
+    description: "Identifies rights holders with financial or moral equity in a comic franchise, game build, or animation release across global licensing bodies.",
+    example: "00990001001 (Party Interest Key)",
+  },
+  {
+    code: "ISWC",
+    name: "International Standard Work Code",
+    role: "Franchise IP Registration",
+    description: "Locks the abstract intellectual property work across multiple media adaptations (e.g. comic issues, spin-offs, animated series, and games).",
+    example: "T-SZM.000.101-C (Neon Circuit / Rank 1)",
+  },
+  {
+    code: "ISRC",
+    name: "International Standard Recording Code",
+    role: "Fixed Production Lock",
+    description: "Uniquely tags a fixed production milestone — such as a finished comic issue, a playable game build, or an animated master episode.",
+    example: "ZA-SZM-26-00001 (Episode Master)",
+  },
+  {
+    code: "IPN",
+    name: "International Performer Number",
+    role: "Creator & Contributor Credits",
+    description: "Credits the specific individual artists, colorists, narrative writers, voice talents, and software engineers who built the production.",
+    example: "IPN-004128 (Lead Illustrator)",
+  },
+];
+
+export const REGISTRY_DEMO_WORKS = [
+  {
+    id: "work-rank-1",
+    title: "Rank 1",
+    iswc: "T-SZM.000.101-C",
+    medium: "Comics & Games",
+    parties: 3,
+    productions: 4,
+    status: "Verified Canon",
+  },
+  {
+    id: "work-khanya",
+    title: "Khanya",
+    iswc: "T-SZM.000.102-K",
+    medium: "Comics & Animation",
+    parties: 4,
+    productions: 5,
+    status: "Verified Canon",
+  },
+  {
+    id: "work-rrba",
+    title: "RRBA (Rebel Rogue Botanical Alliance)",
+    iswc: "T-SZM.000.103-R",
+    medium: "Comics & Transmedia",
+    parties: 3,
+    productions: 6,
+    status: "Verified Canon",
+  },
+  {
+    id: "work-zipho",
+    title: "Zipho",
+    iswc: "T-SZM.000.104-Z",
+    medium: "Comics & Interactive Prototype",
+    parties: 2,
+    productions: 2,
+    status: "Verified Canon",
   },
 ];

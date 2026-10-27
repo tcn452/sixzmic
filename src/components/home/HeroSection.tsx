@@ -28,29 +28,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onReadClick, onExplore
       </div>
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Top Eyebrow */}
-        <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center border-b border-white/10 pb-5 mb-8">
-          <div className="flex items-center gap-3">
-            <span className="flex h-2 w-2 rounded-full bg-sixzmic-lime animate-ping" />
-            <span className="text-xs font-bold uppercase tracking-widest text-sixzmic-lime">
-              FEATURED ORIGINAL IP
-            </span>
-            <span className="hidden sm:inline text-white/30">|</span>
-            <span className="hidden sm:inline text-xs text-white/60">
-              6 Independent Studios Under One Unified Publishing House
-            </span>
-          </div>
-
-          <button
-            onClick={onExploreStudios}
-            className="flex items-center gap-1.5 rounded-full border border-white/15 bg-white/5 px-3.5 py-1.5 text-xs font-medium text-white/80 transition-all hover:border-sixzmic-lime/50 hover:text-white"
-          >
-            <Layers className="h-3.5 w-3.5 text-sixzmic-lime" />
-            <span>View All Studios</span>
-            <ChevronRight className="h-3 w-3 text-white/40" />
-          </button>
-        </div>
-
         {/* Main Stage Grid */}
         <div className="grid grid-cols-1 gap-10 lg:grid-cols-12 lg:items-center">
           {/* Left Column: Comic & Lore Details */}
