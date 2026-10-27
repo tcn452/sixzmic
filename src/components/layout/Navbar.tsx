@@ -21,7 +21,7 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
     { href: "/games", label: "Games & Videos" },
     { href: "/characters", label: "Characters" },
     { href: "/podcasts", label: "Podcasts" },
-    { href: "/institutions", label: "Institutions" },
+    { href: "/institutions", label: "Institutions & Learn" },
   ];
 
   return (
@@ -74,15 +74,13 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
         <div className="hidden sm:flex items-center gap-3.5 shrink-0">
           <ThemeToggle />
 
-          {openSubmitModal && (
-            <button
-              onClick={openSubmitModal}
-              className="tactile-btn flex items-center gap-2 rounded-xl border border-black/10 dark:border-white/15 bg-black/[0.03] dark:bg-white/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-white transition-all duration-200 hover:border-black/25 dark:hover:border-sixzmic-lime/50 hover:bg-black/[0.06] dark:hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0"
-            >
-              <UploadCloud className="h-4 w-4 text-neutral-800 dark:text-sixzmic-lime group-hover:scale-105 transition-transform" />
-              <span>Submit IP</span>
-            </button>
-          )}
+          <Link
+            href="/submissions"
+            className="tactile-btn flex items-center gap-2 rounded-xl border border-black/10 dark:border-white/15 bg-black/[0.03] dark:bg-white/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-white transition-all duration-200 hover:border-black/25 dark:hover:border-sixzmic-lime/50 hover:bg-black/[0.06] dark:hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0"
+          >
+            <UploadCloud className="h-4 w-4 text-neutral-800 dark:text-sixzmic-lime group-hover:scale-105 transition-transform" />
+            <span>Submit IP</span>
+          </Link>
 
           <Link
             href="/comics#membership-tiers"
@@ -97,15 +95,13 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
         <div className="flex xl:hidden items-center gap-2">
           <ThemeToggle />
 
-          {openSubmitModal && (
-            <button
-              onClick={openSubmitModal}
-              className="sm:hidden rounded-xl border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 p-2 text-neutral-800 dark:text-sixzmic-lime"
-              title="Submit IP"
-            >
-              <UploadCloud className="h-5 w-5" />
-            </button>
-          )}
+          <Link
+            href="/submissions"
+            className="sm:hidden rounded-xl border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 p-2 text-neutral-800 dark:text-sixzmic-lime"
+            title="Submit IP"
+          >
+            <UploadCloud className="h-5 w-5" />
+          </Link>
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -155,18 +151,14 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
           </div>
 
           <div className="mt-8 flex flex-col gap-3 pt-6 border-t border-black/10 dark:border-white/10">
-            {openSubmitModal && (
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  openSubmitModal();
-                }}
-                className="flex w-full items-center justify-center gap-2 rounded-xl border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 py-3.5 text-sm font-semibold text-neutral-900 dark:text-white"
-              >
-                <UploadCloud className="h-4 w-4 text-black dark:text-sixzmic-lime" />
-                <span>Submit Original IP</span>
-              </button>
-            )}
+            <Link
+              href="/submissions"
+              onClick={() => setMobileMenuOpen(false)}
+              className="flex w-full items-center justify-center gap-2 rounded-xl border border-black/10 dark:border-white/15 bg-black/5 dark:bg-white/5 py-3.5 text-sm font-semibold text-neutral-900 dark:text-white"
+            >
+              <UploadCloud className="h-4 w-4 text-black dark:text-sixzmic-lime" />
+              <span>Submit Original IP / Learn</span>
+            </Link>
             <Link
               href="/comics#membership-tiers"
               onClick={() => setMobileMenuOpen(false)}

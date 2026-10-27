@@ -148,17 +148,24 @@ export const Footer: React.FC<FooterProps> = ({ openSubmitModal }) => {
           <div>
             <h4 className="text-xs font-bold uppercase tracking-wider text-neutral-900 dark:text-white">Publishing & Legal</h4>
             <ul className="mt-4 space-y-2.5 text-xs">
-              {openSubmitModal && (
-                <li>
-                  <button
-                    onClick={openSubmitModal}
-                    className="flex items-center gap-1 text-black dark:text-sixzmic-lime font-semibold hover:underline"
-                  >
-                    <span>Submit Original IP</span>
-                    <ArrowUpRight className="h-3 w-3" />
-                  </button>
-                </li>
-              )}
+              <li>
+                <Link
+                  href="/submissions"
+                  className="flex items-center gap-1 text-black dark:text-sixzmic-lime font-bold hover:underline"
+                >
+                  <span>Creator Submissions</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/submissions?track=learn"
+                  className="flex items-center gap-1 text-black dark:text-sixzmic-lime font-bold hover:underline"
+                >
+                  <span>Sixzmic Learn Admissions</span>
+                  <ArrowUpRight className="h-3 w-3" />
+                </Link>
+              </li>
               <li>
                 <Link href="/legal" className="hover:text-black dark:hover:text-white transition-colors">
                   IP Registry Standards (ISNI/ISWC)

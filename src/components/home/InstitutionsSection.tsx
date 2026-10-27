@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { INSTITUTIONAL_PLANS, INSTITUTIONAL_FAQS } from "@/data/sixzmicData";
 import {
   GraduationCap,
@@ -13,8 +14,9 @@ import {
   Sparkles,
   BookOpen,
   Gamepad2,
-  Film,
+  Clapperboard,
   Building,
+  ArrowRight
 } from "lucide-react";
 
 export const InstitutionsSection: React.FC = () => {
@@ -99,8 +101,11 @@ export const InstitutionsSection: React.FC = () => {
             <p className="mt-1 text-xs text-white/50">Real-time 3D pipelines & short films</p>
           </div>
 
-          <div className="rounded-2xl border border-white/10 bg-[#0e0e14] p-5 text-center transition-all hover:border-sixzmic-lime/40">
-            <div className="relative mx-auto h-16 w-16 overflow-hidden rounded-xl bg-black/60 p-2">
+          <Link
+            href="/submissions?track=learn"
+            className="group rounded-2xl border border-white/10 bg-[#0e0e14] p-5 text-center transition-all duration-300 ease-snappy hover:border-sixzmic-lime hover:-translate-y-1 hover:shadow-xl"
+          >
+            <div className="relative mx-auto h-16 w-16 overflow-hidden rounded-xl bg-black/60 p-2 group-hover:scale-105 transition-transform">
               <Image
                 src="/institutions/assets/sixzmic-learn.png"
                 alt="Sixzmic Learn"
@@ -108,8 +113,41 @@ export const InstitutionsSection: React.FC = () => {
                 className="object-contain p-1"
               />
             </div>
-            <h3 className="mt-4 text-sm font-bold text-white">Sixzmic Learn</h3>
-            <p className="mt-1 text-xs text-white/50">Industry-led courses & studio mentorship</p>
+            <div className="mt-4 flex items-center justify-center gap-1.5 text-sm font-bold text-white group-hover:text-sixzmic-lime transition-colors">
+              <span>Sixzmic Learn</span>
+              <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
+            </div>
+            <p className="mt-1 text-xs text-white/50">Industry-led courses & student creator admissions</p>
+          </Link>
+        </div>
+
+        {/* Banner connecting to Sixzmic Learn & Creator Submissions */}
+        <div className="mt-12 rounded-2xl border border-sixzmic-lime/30 bg-gradient-to-r from-sixzmic-lime/10 via-[#0e0e14] to-transparent p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+          <div className="max-w-2xl">
+            <span className="text-[10px] font-mono font-bold uppercase tracking-widest text-sixzmic-lime">
+              STUDENT & CREATOR OPPORTUNITIES NOW OPEN
+            </span>
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-white mt-1">
+              Are you a student creator, writer, game dev, or animator?
+            </h3>
+            <p className="text-xs text-white/70 mt-1.5 leading-relaxed">
+              Explore Sixzmic Learn curriculum decks, or submit your comic chapters, prototype builds,
+              and animation reels to our studio acquisition desk.
+            </p>
+          </div>
+          <div className="flex flex-wrap items-center gap-3 shrink-0">
+            <Link
+              href="/submissions?track=learn"
+              className="tactile-btn rounded-xl bg-sixzmic-lime px-5 py-2.5 text-xs font-bold text-black hover:opacity-90 shadow-md"
+            >
+              Join Sixzmic Learn
+            </Link>
+            <Link
+              href="/submissions?track=submission"
+              className="tactile-btn rounded-xl border border-white/20 bg-white/5 px-5 py-2.5 text-xs font-semibold text-white hover:bg-white/10"
+            >
+              Submit Creator IP
+            </Link>
           </div>
         </div>
 
