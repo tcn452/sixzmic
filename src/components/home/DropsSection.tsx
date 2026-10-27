@@ -44,10 +44,10 @@ export const DropsSection: React.FC<DropsSectionProps> = ({ onSelectComic }) => 
               <button
                 key={g}
                 onClick={() => setSelectedGenre(g)}
-                className={`rounded-lg px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-all ${
+                className={`tactile-btn rounded-lg px-3.5 py-1.5 text-xs font-semibold tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${
                   selectedGenre === g
                     ? "bg-black text-white dark:bg-sixzmic-lime dark:text-black font-bold shadow-xs"
-                    : "border border-black/10 dark:border-white/10 bg-white dark:bg-white/5 text-neutral-700 dark:text-white/70 hover:border-black/20 dark:hover:border-white/20"
+                    : "border border-black/10 dark:border-white/10 bg-white dark:bg-white/5 text-neutral-700 dark:text-white/70 hover:border-black/25 dark:hover:border-white/20 hover:text-black dark:hover:text-white"
                 }`}
               >
                 {g}
@@ -62,7 +62,7 @@ export const DropsSection: React.FC<DropsSectionProps> = ({ onSelectComic }) => 
             <div
               key={comic.id}
               onClick={() => onSelectComic(comic)}
-              className="group relative flex flex-col cursor-pointer overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0e0e14] transition-all duration-300 hover:-translate-y-1 hover:border-black/30 dark:hover:border-sixzmic-lime/50 shadow-xs hover:shadow-xl"
+              className="cover-sheen group relative flex flex-col cursor-pointer overflow-hidden rounded-xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0e0e14] transition-all duration-300 ease-snappy hover:-translate-y-1.5 hover:border-black/30 dark:hover:border-sixzmic-lime/50 shadow-xs hover:shadow-xl"
             >
               {/* Cover Aspect Ratio */}
               <div className="relative aspect-[2/3] w-full overflow-hidden bg-neutral-200 dark:bg-black">
@@ -70,10 +70,10 @@ export const DropsSection: React.FC<DropsSectionProps> = ({ onSelectComic }) => 
                   src={comic.coverImage}
                   alt={comic.title}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  className="object-cover transition-transform duration-500 ease-snappy group-hover:scale-108"
                   sizes="(min-width: 1024px) 16vw, (min-width: 640px) 30vw, 45vw"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-300" />
 
                 {/* Badge if present */}
                 {comic.badge && (
@@ -82,9 +82,9 @@ export const DropsSection: React.FC<DropsSectionProps> = ({ onSelectComic }) => 
                   </div>
                 )}
 
-                {/* Quick Read Overlay Button */}
+                {/* Quick Read Overlay Button with slide-up microtransition */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 bg-black/40 backdrop-blur-xs">
-                  <div className="flex items-center gap-1.5 rounded-lg bg-white text-black dark:bg-sixzmic-lime dark:text-black px-3 py-1.5 text-xs font-bold shadow-lg">
+                  <div className="transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 ease-snappy flex items-center gap-1.5 rounded-lg bg-white text-black dark:bg-sixzmic-lime dark:text-black px-3.5 py-1.5 text-xs font-bold shadow-lg">
                     <BookOpen className="h-3.5 w-3.5" />
                     <span>Read</span>
                   </div>
@@ -108,7 +108,7 @@ export const DropsSection: React.FC<DropsSectionProps> = ({ onSelectComic }) => 
                 <div className="text-[10px] font-semibold uppercase tracking-wider text-neutral-500 dark:text-sixzmic-lime truncate">
                   {comic.studio}
                 </div>
-                <h3 className="mt-0.5 text-xs font-bold text-neutral-900 dark:text-white truncate group-hover:text-black dark:group-hover:text-sixzmic-lime transition-colors">
+                <h3 className="mt-0.5 text-xs font-bold text-neutral-900 dark:text-white truncate group-hover:text-black dark:group-hover:text-sixzmic-lime transition-colors duration-200">
                   {comic.title}
                 </h3>
                 <p className="text-[11px] text-neutral-500 dark:text-white/50">{comic.episode}</p>

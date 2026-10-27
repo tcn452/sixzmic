@@ -34,12 +34,12 @@ export const StudiosSection: React.FC<StudiosSectionProps> = ({ openSubmitModal 
           {STUDIOS_LIST.map((studio) => (
             <div
               key={studio.id}
-              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-sixzmic-surface p-6 transition-all duration-300 hover:border-black/30 dark:hover:border-sixzmic-lime/50 shadow-xs hover:shadow-xl"
+              className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-sixzmic-surface p-6 transition-all duration-300 ease-snappy hover:-translate-y-1.5 hover:border-black/30 dark:hover:border-sixzmic-lime/50 shadow-xs hover:shadow-xl"
             >
               <div>
                 {/* Header with Logo */}
                 <div className="flex items-center justify-between">
-                  <div className="relative h-14 w-28 overflow-hidden rounded-xl bg-neutral-100 dark:bg-white/5 p-2 border border-black/5 dark:border-white/10 transition-transform group-hover:scale-105">
+                  <div className="relative h-14 w-28 overflow-hidden rounded-xl bg-neutral-100 dark:bg-white/5 p-2 border border-black/5 dark:border-white/10 transition-all duration-300 ease-snappy group-hover:scale-105 group-hover:border-black/20 dark:group-hover:border-white/20">
                     <Image
                       src={studio.logo}
                       alt={studio.name}
@@ -51,7 +51,7 @@ export const StudiosSection: React.FC<StudiosSectionProps> = ({ openSubmitModal 
                     {studio.focus.slice(0, 2).map((tag) => (
                       <span
                         key={tag}
-                        className="rounded-md bg-neutral-100 dark:bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-neutral-600 dark:text-white/70 border border-black/5 dark:border-white/5"
+                        className="rounded-md bg-neutral-100 dark:bg-white/5 px-2 py-0.5 text-[10px] font-semibold text-neutral-600 dark:text-white/70 border border-black/5 dark:border-white/5 transition-colors"
                       >
                         {tag}
                       </span>
@@ -60,7 +60,7 @@ export const StudiosSection: React.FC<StudiosSectionProps> = ({ openSubmitModal 
                 </div>
 
                 {/* Studio Name & Role */}
-                <h3 className="mt-5 text-xl font-bold text-neutral-900 dark:text-white group-hover:text-black dark:group-hover:text-sixzmic-lime transition-colors">
+                <h3 className="mt-5 text-xl font-bold text-neutral-900 dark:text-white group-hover:text-black dark:group-hover:text-sixzmic-lime transition-colors duration-200">
                   {studio.name}
                 </h3>
                 <p className="mt-1 text-xs font-medium text-neutral-500 dark:text-white/50">{studio.role}</p>
@@ -77,8 +77,8 @@ export const StudiosSection: React.FC<StudiosSectionProps> = ({ openSubmitModal 
                   <span className="block text-[10px] uppercase font-bold text-neutral-500 dark:text-white/40">Active Slate</span>
                   <span className="font-semibold text-neutral-900 dark:text-white/90">{studio.activeProjects}</span>
                 </div>
-                <div className="h-7 w-7 rounded-full bg-neutral-100 dark:bg-white/5 flex items-center justify-center text-neutral-600 dark:text-white/40 group-hover:bg-black group-hover:text-white dark:group-hover:bg-sixzmic-lime dark:group-hover:text-black transition-colors">
-                  <ArrowRight className="h-3.5 w-3.5" />
+                <div className="h-7 w-7 rounded-full bg-neutral-100 dark:bg-white/5 flex items-center justify-center text-neutral-600 dark:text-white/40 group-hover:bg-black group-hover:text-white dark:group-hover:bg-sixzmic-lime dark:group-hover:text-black transition-all duration-200">
+                  <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-0.5 transition-transform" />
                 </div>
               </div>
             </div>

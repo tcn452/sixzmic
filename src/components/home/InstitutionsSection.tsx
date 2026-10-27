@@ -252,24 +252,30 @@ export const InstitutionsSection: React.FC = () => {
               return (
                 <div
                   key={faq.q}
-                  className="rounded-xl border border-white/10 bg-[#0c0c12] overflow-hidden transition-colors hover:border-white/20"
+                  className="rounded-xl border border-white/10 bg-[#0c0c12] overflow-hidden transition-all duration-300 hover:border-white/20"
                 >
                   <button
                     onClick={() => toggleFaq(idx)}
-                    className="flex w-full items-center justify-between p-4 text-left font-semibold text-xs sm:text-sm text-white"
+                    className="flex w-full items-center justify-between p-4 text-left font-semibold text-xs sm:text-sm text-white hover:text-sixzmic-lime transition-colors duration-200"
                   >
                     <span>{faq.q}</span>
                     <ChevronDown
-                      className={`h-4 w-4 text-sixzmic-lime transition-transform ${
+                      className={`h-4 w-4 text-sixzmic-lime transition-transform duration-300 ease-snappy ${
                         isOpen ? "rotate-180" : ""
                       }`}
                     />
                   </button>
-                  {isOpen && (
-                    <div className="px-4 pb-4 text-xs text-white/70 leading-relaxed border-t border-white/5 pt-3">
-                      {faq.a}
+                  <div
+                    className={`grid transition-all duration-300 ease-snappy ${
+                      isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <div className="px-4 pb-4 text-xs text-white/70 leading-relaxed border-t border-white/5 pt-3">
+                        {faq.a}
+                      </div>
                     </div>
-                  )}
+                  </div>
                 </div>
               );
             })}

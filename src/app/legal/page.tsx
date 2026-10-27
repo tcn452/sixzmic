@@ -75,7 +75,7 @@ export default function LegalPage() {
         <div className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             {activeTab === "identifiers" && (
-              <div>
+              <div className="animate-fadeIn">
                 <div className="max-w-2xl mb-10">
                   <h2 className="text-2xl font-bold font-display sm:text-3xl text-neutral-900 dark:text-white">
                     The Five Global Identifiers
@@ -90,11 +90,11 @@ export default function LegalPage() {
                   {LEGAL_IDENTIFIERS.map((id) => (
                     <div
                       key={id.code}
-                      className="rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0e0e14] p-6 flex flex-col justify-between shadow-xs"
+                      className="group rounded-2xl border border-black/10 dark:border-white/10 bg-white dark:bg-[#0e0e14] p-6 flex flex-col justify-between shadow-xs hover:border-black/30 dark:hover:border-sixzmic-lime/50 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 ease-snappy"
                     >
                       <div>
                         <div className="flex items-center justify-between">
-                          <span className="text-lg font-black font-display text-neutral-900 dark:text-sixzmic-lime bg-black/5 dark:bg-sixzmic-lime/10 px-3 py-1 rounded-lg">
+                          <span className="text-lg font-black font-display text-neutral-900 dark:text-sixzmic-lime bg-black/5 dark:bg-sixzmic-lime/10 px-3 py-1 rounded-lg transition-colors group-hover:scale-105 duration-200">
                             {id.code}
                           </span>
                           <span className="text-[10px] uppercase font-semibold text-neutral-500 dark:text-white/40">
@@ -118,7 +118,7 @@ export default function LegalPage() {
             )}
 
             {activeTab === "works" && (
-              <div>
+              <div className="animate-fadeIn">
                 <div className="max-w-2xl mb-10">
                   <h2 className="text-2xl font-bold font-display sm:text-3xl text-neutral-900 dark:text-white">
                     Verified Canonical Works
@@ -165,7 +165,7 @@ export default function LegalPage() {
             )}
 
             {activeTab === "standards" && (
-              <div className="max-w-3xl space-y-8">
+              <div className="animate-fadeIn max-w-3xl space-y-8">
                 <div>
                   <h2 className="text-2xl font-bold font-display sm:text-3xl text-neutral-900 dark:text-white">
                     Creator IP Bill of Rights

@@ -27,12 +27,12 @@ export const SubmitModal: React.FC<SubmitModalProps> = ({ isOpen, onClose }) => 
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
-      <div className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/15 bg-sixzmic-surface p-6 sm:p-8 shadow-2xl">
+    <div className="animate-fadeIn fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-md">
+      <div className="animate-scaleIn relative w-full max-w-xl overflow-hidden rounded-2xl border border-white/15 bg-sixzmic-surface p-6 sm:p-8 shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 rounded-lg p-1.5 text-white/50 hover:bg-white/10 hover:text-white"
+          className="tactile-btn absolute top-5 right-5 rounded-lg p-1.5 text-white/50 hover:bg-white/10 hover:text-white transition-all"
         >
           <X className="h-5 w-5" />
         </button>

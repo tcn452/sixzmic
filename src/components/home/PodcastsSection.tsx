@@ -41,24 +41,24 @@ export const PodcastsSection: React.FC = () => {
             return (
               <div
                 key={ep.code}
-                className={`group flex flex-col justify-between gap-4 rounded-xl border p-4 sm:p-5 transition-all md:flex-row md:items-center ${
+                className={`group flex flex-col justify-between gap-4 rounded-xl border p-4 sm:p-5 transition-all duration-300 ease-snappy hover:-translate-y-0.5 md:flex-row md:items-center ${
                   isPlaying
                     ? "border-black dark:border-sixzmic-lime bg-white dark:bg-sixzmic-surface shadow-md"
-                    : "border-black/10 dark:border-white/10 bg-white/70 dark:bg-sixzmic-surface/60 hover:border-black/20 dark:hover:border-white/20 hover:bg-white dark:hover:bg-sixzmic-surface"
+                    : "border-black/10 dark:border-white/10 bg-white/70 dark:bg-sixzmic-surface/60 hover:border-black/25 dark:hover:border-white/20 hover:bg-white dark:hover:bg-sixzmic-surface hover:shadow-md"
                 }`}
               >
                 <div className="flex items-start gap-4">
                   {/* Play Button */}
                   <button
                     onClick={() => togglePlay(ep.code)}
-                    className={`mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-transform group-hover:scale-105 ${
+                    className={`tactile-btn mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-xl transition-all duration-200 group-hover:scale-108 active:scale-95 ${
                       isPlaying
-                        ? "bg-black text-white dark:bg-sixzmic-lime dark:text-black"
+                        ? "bg-black text-white dark:bg-sixzmic-lime dark:text-black shadow-sm"
                         : "border border-black/15 dark:border-white/15 bg-black/5 dark:bg-white/5 text-neutral-900 dark:text-white hover:border-black dark:hover:border-sixzmic-lime"
                     }`}
                     aria-label={`Play ${ep.title}`}
                   >
-                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5" />}
+                    {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5 ml-0.5 group-hover:translate-x-0.5 transition-transform" />}
                   </button>
 
                   {/* Metadata */}

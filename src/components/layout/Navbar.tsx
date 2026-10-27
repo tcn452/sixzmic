@@ -51,16 +51,20 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-2 text-[14px] sm:text-[15px] font-semibold tracking-wide transition-colors ${
+                className={`group relative py-2 text-[14px] sm:text-[15px] font-semibold tracking-wide transition-colors duration-200 ${
                   isActive
                     ? "text-black dark:text-sixzmic-lime"
                     : "text-neutral-600 dark:text-white/70 hover:text-black dark:hover:text-white"
                 }`}
               >
                 <span>{item.label}</span>
-                {isActive && (
-                  <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-black dark:bg-sixzmic-lime shadow-sm" />
-                )}
+                <span
+                  className={`absolute -bottom-1 left-0 right-0 h-0.5 rounded-full bg-black dark:bg-sixzmic-lime transition-all duration-300 ease-snappy ${
+                    isActive
+                      ? "opacity-100 scale-x-100 shadow-sm"
+                      : "opacity-0 scale-x-0 group-hover:opacity-40 group-hover:scale-x-75"
+                  }`}
+                />
               </Link>
             );
           })}
@@ -73,19 +77,19 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
           {openSubmitModal && (
             <button
               onClick={openSubmitModal}
-              className="flex items-center gap-2 rounded-xl border border-black/10 dark:border-white/15 bg-black/[0.03] dark:bg-white/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-white transition-all hover:border-black/25 dark:hover:border-sixzmic-lime/50 hover:bg-black/[0.06] dark:hover:bg-white/10"
+              className="tactile-btn flex items-center gap-2 rounded-xl border border-black/10 dark:border-white/15 bg-black/[0.03] dark:bg-white/5 px-4 py-2.5 text-xs sm:text-sm font-semibold text-neutral-800 dark:text-white transition-all duration-200 hover:border-black/25 dark:hover:border-sixzmic-lime/50 hover:bg-black/[0.06] dark:hover:bg-white/10 hover:-translate-y-0.5 active:translate-y-0"
             >
-              <UploadCloud className="h-4 w-4 text-neutral-800 dark:text-sixzmic-lime" />
+              <UploadCloud className="h-4 w-4 text-neutral-800 dark:text-sixzmic-lime group-hover:scale-105 transition-transform" />
               <span>Submit IP</span>
             </button>
           )}
 
           <Link
             href="/comics#membership-tiers"
-            className="flex items-center gap-1.5 rounded-xl bg-black dark:bg-sixzmic-lime px-5 py-2.5 text-xs sm:text-sm font-bold text-white dark:text-black transition-all hover:opacity-90 shadow-md"
+            className="tactile-btn flex items-center gap-1.5 rounded-xl bg-black dark:bg-sixzmic-lime px-5 py-2.5 text-xs sm:text-sm font-bold text-white dark:text-black transition-all duration-200 hover:opacity-90 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
           >
             <span>Fan Pass</span>
-            <ChevronRight className="h-4 w-4" />
+            <ChevronRight className="h-4 w-4 group-hover:translate-x-0.5 transition-transform" />
           </Link>
         </div>
 
@@ -115,7 +119,7 @@ export const Navbar: React.FC<NavbarProps> = ({ openSubmitModal }) => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="border-t border-black/10 dark:border-white/10 bg-[#f7f7f4]/98 dark:bg-[#070709]/98 px-6 py-8 backdrop-blur-3xl xl:hidden">
+        <div className="animate-slideUp border-t border-black/10 dark:border-white/10 bg-[#f7f7f4]/98 dark:bg-[#070709]/98 px-6 py-8 backdrop-blur-3xl xl:hidden shadow-2xl">
           <div className="flex flex-col gap-2">
             <Link
               href="/"

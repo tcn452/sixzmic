@@ -22,12 +22,12 @@ export const ReaderModal: React.FC<ReaderModalProps> = ({
   if (!comic) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-      <div className="relative w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-sixzmic-surface shadow-2xl">
+    <div className="animate-fadeIn fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
+      <div className="animate-scaleIn relative w-full max-w-3xl overflow-hidden rounded-2xl border border-white/15 bg-sixzmic-surface shadow-2xl">
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 rounded-full bg-black/60 p-2 text-white/70 hover:bg-white/20 hover:text-white"
+          className="tactile-btn absolute top-4 right-4 z-20 rounded-full bg-black/60 p-2 text-white/70 hover:bg-white/20 hover:text-white transition-all"
         >
           <X className="h-5 w-5" />
         </button>

@@ -31,10 +31,10 @@ export const MembershipSection: React.FC<MembershipSectionProps> = ({ onSelectTi
           {MEMBERSHIP_TIERS.map((tier) => (
             <div
               key={tier.id}
-              className={`relative flex flex-col justify-between rounded-2xl border p-6 sm:p-8 transition-all duration-300 ${
+              className={`relative flex flex-col justify-between rounded-2xl border p-6 sm:p-8 transition-all duration-300 ease-snappy ${
                 tier.popular
-                  ? "border-black dark:border-sixzmic-lime bg-white dark:bg-sixzmic-surface shadow-xl md:-translate-y-2 ring-1 ring-black/10 dark:ring-sixzmic-lime/30"
-                  : "border-black/10 dark:border-white/10 bg-white/70 dark:bg-sixzmic-surface/60 hover:border-black/25 dark:hover:border-white/20"
+                  ? "border-black dark:border-sixzmic-lime bg-white dark:bg-sixzmic-surface shadow-xl md:-translate-y-2 ring-1 ring-black/10 dark:ring-sixzmic-lime/30 hover:-translate-y-3 hover:shadow-2xl"
+                  : "border-black/10 dark:border-white/10 bg-white/70 dark:bg-sixzmic-surface/60 hover:border-black/25 dark:hover:border-white/20 hover:-translate-y-1 hover:shadow-lg"
               }`}
             >
               {tier.popular && (
@@ -70,10 +70,10 @@ export const MembershipSection: React.FC<MembershipSectionProps> = ({ onSelectTi
 
               <button
                 onClick={() => onSelectTier(tier.name)}
-                className={`mt-8 w-full rounded-xl py-3 text-center text-xs font-bold tracking-wide transition-all ${
+                className={`tactile-btn mt-8 w-full rounded-xl py-3 text-center text-xs font-bold tracking-wide transition-all duration-200 hover:-translate-y-0.5 active:translate-y-0 ${
                   tier.popular
-                    ? "bg-black text-white dark:bg-sixzmic-lime dark:text-black hover:opacity-90 shadow-md"
-                    : "border border-black/15 dark:border-white/15 bg-black/[0.03] dark:bg-white/5 text-neutral-900 dark:text-white hover:border-black/30 dark:hover:border-sixzmic-lime"
+                    ? "bg-black text-white dark:bg-sixzmic-lime dark:text-black hover:opacity-90 shadow-md hover:shadow-lg"
+                    : "border border-black/15 dark:border-white/15 bg-black/[0.03] dark:bg-white/5 text-neutral-900 dark:text-white hover:border-black/30 dark:hover:border-sixzmic-lime hover:bg-black/[0.06] dark:hover:bg-white/10"
                 }`}
               >
                 {tier.ctaText}
