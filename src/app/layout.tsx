@@ -43,8 +43,26 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark scroll-smooth">
-      <body className="min-h-screen bg-sixzmic-bg text-sixzmic-white antialiased selection:bg-sixzmic-lime selection:text-black">
+    <html lang="en" className="dark scroll-smooth" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                try {
+                  var theme = localStorage.getItem('sixzmic-theme');
+                  if (theme === 'light') {
+                    document.documentElement.classList.remove('dark');
+                  } else {
+                    document.documentElement.classList.add('dark');
+                  }
+                } catch(e) {}
+              })();
+            `,
+          }}
+        />
+      </head>
+      <body className="min-h-screen bg-[#f7f7f4] dark:bg-sixzmic-bg text-neutral-900 dark:text-sixzmic-white antialiased selection:bg-black selection:text-white dark:selection:bg-sixzmic-lime dark:selection:text-black transition-colors">
         {children}
       </body>
     </html>

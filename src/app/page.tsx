@@ -29,7 +29,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="relative min-h-screen flex flex-col bg-[#070709] text-white">
+    <div className="relative min-h-screen flex flex-col bg-[#f7f7f4] dark:bg-[#070709] text-neutral-900 dark:text-white transition-colors">
       {/* Persistent Navigation */}
       <Navbar openSubmitModal={() => setIsSubmitOpen(true)} />
 
